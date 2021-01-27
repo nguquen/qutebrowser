@@ -1,7 +1,7 @@
 def blood(c, options = {}):
     palette = {
         'background': '#282a36',
-        'background-alt': '#282a36', 
+        'background-alt': '#282a36',
         'background-attention': '#181920',
         'border': '#282a36',
         'current-line': '#44475a',
@@ -17,7 +17,7 @@ def blood(c, options = {}):
         'purple': '#bd93f9',
         'red': '#ff5555',
         'yellow': '#f1fa8c'
-    }   
+    }
 
     spacing = options.get('spacing', {
         'vertical': 5,
@@ -237,11 +237,11 @@ def blood(c, options = {}):
 
     ## Background color of the tab bar.
     ## Type: QtColor
-    c.colors.tabs.bar.bg = palette['selection']
+    c.colors.tabs.bar.bg = palette['background']
 
     ## Background color of unselected even tabs.
     ## Type: QtColor
-    c.colors.tabs.even.bg = palette['selection']
+    c.colors.tabs.even.bg = palette['background']
 
     ## Foreground color of unselected even tabs.
     ## Type: QtColor
@@ -270,7 +270,7 @@ def blood(c, options = {}):
 
     ## Background color of unselected odd tabs.
     ## Type: QtColor
-    c.colors.tabs.odd.bg = palette['selection']
+    c.colors.tabs.odd.bg = palette['background']
 
     ## Foreground color of unselected odd tabs.
     ## Type: QtColor
@@ -278,7 +278,7 @@ def blood(c, options = {}):
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.even.bg = palette['background']
+    c.colors.tabs.selected.even.bg = palette['selection']
 
     # ## Foreground color of selected even tabs.
     # ## Type: QtColor
@@ -286,7 +286,7 @@ def blood(c, options = {}):
 
     # ## Background color of selected odd tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.odd.bg = palette['background']
+    c.colors.tabs.selected.odd.bg = palette['selection']
 
     # ## Foreground color of selected odd tabs.
     # ## Type: QtColor
@@ -301,10 +301,10 @@ def blood(c, options = {}):
     font_size_str = str(font_size) + 'pt'
     font_size_small_str = str(font_size - 1) + 'pt'
 
-    c.fonts.monospace = monospace
+    c.fonts.default_family = monospace
     c.fonts.completion.entry = font_size_str + ' monospace'
     c.fonts.completion.category = 'bold'
-    c.fonts.debug_console = font_size_str + ' monospace' 
+    c.fonts.debug_console = font_size_str + ' monospace'
     c.fonts.downloads = font_size_str + ' monospace'
     c.fonts.hints = font_size_small_str + ' monospace'
     c.fonts.keyhint = font_size_str + ' monospace'
@@ -313,7 +313,8 @@ def blood(c, options = {}):
     c.fonts.messages.warning = font_size_str + ' monospace'
     c.fonts.prompts = font_size_str + ' monospace'
     c.fonts.statusbar = font_size_small_str + ' monospace'
-    c.fonts.tabs = font_size_str  + ' monospace'
+    c.fonts.tabs.selected = font_size_str  + ' monospace'
+    c.fonts.tabs.unselected = font_size_str  + ' monospace'
     c.fonts.web.family.standard = ''
     c.fonts.web.family.fixed = ''
     c.fonts.web.family.serif = ''
@@ -324,4 +325,3 @@ def blood(c, options = {}):
     c.fonts.web.size.default_fixed = 13
     c.fonts.web.size.minimum = 0
     c.fonts.web.size.minimum_logical = 6
-
